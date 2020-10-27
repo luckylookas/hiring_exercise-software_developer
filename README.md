@@ -8,7 +8,9 @@ Your application should expose two HTTP endpoints:
 ### API Definition: 
 
 ```
-/analyse/new
+POST /analyse/new
+
+["url1", ...]
 ```
 
 ### API Input:
@@ -54,6 +56,19 @@ This API endpoint takes an id as input
 ### API Output:
 
 Returns the three elements with the most matches, additinally the orignal news header and the link to the whole news text should be displayed.
+
+```json
+[{
+ "tag" : "burundi",
+   "items": [{
+      "title": "Attacks on Military Camps in Burundi Kill Eight",
+      "link": "https://somenews.com/rss"
+    },{
+      "title": "Burundi military sites attacked, 12 insurgents killed",
+      "link": "https://othernews.com/rss"
+    }]
+}, {/* number 2 */}, {/* number 3 */}]
+```
 
 ### Workflow:
 
